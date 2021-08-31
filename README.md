@@ -1,0 +1,1 @@
+This project attempts to rebuild the Google homepage.

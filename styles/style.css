@@ -48,7 +48,23 @@ table {
 }
 
 /* Header */
+li a {
+    color: gray;
+    text-decoration: none;
+}
 
+a:hover {
+    text-decoration: underline;
+}
+
+.sign-in {
+    background-color: #4285f4;
+    border: 1px solid #4285f4;
+    border-radius: 2px;
+    color: #fff;
+    font-weight: 800;
+    padding: 8px 12px;
+}
 
 /* Logo and search bar */
 .logo, .search {

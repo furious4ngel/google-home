@@ -2,7 +2,8 @@
 <html>
     <head>
         <link href="styles/style.css" rel="stylesheet">
-        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <meta charset="utf-8">
         <title>Google</title>
     </head>
     <body>
@@ -13,14 +14,20 @@
                 <li style="flex: 1;"></li>
                 <li><a href="#gmail">Gmail</a></li>
                 <li><a href="#images">Images</a></li>
-                <li><a href="#google-apps" style="opacity: 0.55;">
+                <li><a href="#google-apps">
                     <img src="images/1x/outline_apps_black_24dp.png" alt="Google Apps">
                 </a></li>
                 <li><button id="sign-in" type="button">Sign in</button></li>
             </nav>
         </header>
         <img class="logo" src="images/googlelogo_color_272x92dp.png" alt="The Google logo">
-        <input class="search-bar" type="search">
+        <div class="search-bar-wrapper">
+            <img class="material-icons search-icon" src="images/1x/outline_search_black_24dp.png"></img>
+            <input class="search-bar" type="search">
+            <a href="#search-by-voice">
+                <img class="material-icons mic-icon" src="images/googlemic_color_24dp.png" alt="Search by voice">
+            </a>
+        </div>
         <div id="search-buttons">
             <button class="search" type="button">Google Search</button>
             <button class="search" type="button">I'm Feeling Lucky</button>

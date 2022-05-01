@@ -17,6 +17,7 @@
 /* Top Links & Buttons */
 .top-links,
 .top-left-links,
+.top-right-links-and-buttons,
 .top-right-links,
 .buttons {
 	display: flex;
@@ -24,32 +25,29 @@
 }
 
 .top-links {
-	gap: 1.25rem;
+	gap: 4.25rem;
 	justify-content: space-between;
 	padding: 0.75rem 1.5rem 0;
 }
 
 .top-left-links,
+.top-right-links-and-buttons,
 .top-right-links {
 	gap: 1rem;
-}
-
-.top-left-links {
-	margin-right: auto;
-	width: 9rem;
 }
 
 .buttons {
 	gap: 0.75rem;
 }
 
-/* Top Links */
-.link {
+.link,
+.sign-in-button {
 	text-decoration-line: none;
 	font-family: Arial, sans-serif;
 	font-size: 0.9rem;
 }
 
+/* Top Links */
 .link:not(
 	.google-apps-button .link,
 	.sign-in-button .link) {
@@ -69,17 +67,12 @@
 	justify-content: center;
 	height: 40px;
 	width: 40px;
+	text-decoration-line: none;
 	background: transparent;
 	border: transparent;
 	border-radius: 50%;
-	cursor: pointer;
-}
-
-.google-apps-button .link {
-	display: inline-block;
-	height: 25px;
-	width: 25px;
 	color: hsl(0, 0%, 30%);
+	cursor: pointer;
 }
 
 .material-symbols-outlined {
@@ -96,15 +89,14 @@
 
 /* Sign-in Button */
 .sign-in-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	height: 2.25rem;
 	width: 6rem;
 	background-color: hsl(214, 80%, 50%);
 	border: transparent;
 	border-radius: 4px;
-	cursor: pointer;
-}
-
-.sign-in-button .link {
 	color: hsl(0, 0%, 100%);
 }
 

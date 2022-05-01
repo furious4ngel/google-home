@@ -1,0 +1,114 @@
+* {
+	box-sizing: border-box;
+}
+
+.html {
+	height: 100%;
+	min-width: 27rem;
+}
+
+.body {
+	display: grid;
+	grid-template-rows: auto 1fr 1fr;
+	height: 100%;
+	margin: 0;
+}
+
+/* Top Links & Buttons */
+.top-links,
+.top-left-links,
+.top-right-links,
+.buttons {
+	display: flex;
+	align-items: center;
+}
+
+.top-links {
+	gap: 1.25rem;
+	justify-content: space-between;
+	padding: 0.75rem 1.5rem 0;
+}
+
+.top-left-links,
+.top-right-links {
+	gap: 1rem;
+}
+
+.top-left-links {
+	margin-right: auto;
+	width: 9rem;
+}
+
+.buttons {
+	gap: 0.75rem;
+}
+
+/* Top Links */
+.link {
+	text-decoration-line: none;
+	font-family: Arial, sans-serif;
+	font-size: 0.9rem;
+}
+
+.link:not(
+	.google-apps-button .link,
+	.sign-in-button .link) {
+	color: hsl(0, 0%, 0%);
+}
+
+.link:not(
+	.google-apps-button .link,
+	.sign-in-button .link):hover {
+	text-decoration-line: underline;
+}
+
+/* Google Apps Button */
+.google-apps-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 40px;
+	width: 40px;
+	background: transparent;
+	border: transparent;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.google-apps-button .link {
+	display: inline-block;
+	height: 25px;
+	width: 25px;
+	color: hsl(0, 0%, 30%);
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
+}
+
+.google-apps-button:hover {
+	background-color: hsla(0, 0%, 85%, 0.4);
+}
+
+/* Sign-in Button */
+.sign-in-button {
+	height: 2.25rem;
+	width: 6rem;
+	background-color: hsl(214, 80%, 50%);
+	border: transparent;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.sign-in-button .link {
+	color: hsl(0, 0%, 100%);
+}
+
+.sign-in-button:hover {
+	box-shadow: 0 1px 3px hsl(214, 100%, 80%);
+	background-color: hsl(214, 80%, 55%);
+}

@@ -230,7 +230,7 @@
 }
 
 .middle-link .link::before {
-	content: url("../images/google-leaf.png");
+	content: url("../img/google-leaf.png");
 	transform: scale(0.6);
 }
 

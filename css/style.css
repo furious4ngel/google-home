@@ -15,6 +15,7 @@
 	display: grid;
 	grid-template-rows: max-content minmax(auto, 43.75rem) auto;
 	height: 100%;
+  font: 1rem / 1.4 "Arial", sans-serif;
 }
 
 .material-symbols-outlined {
@@ -55,7 +56,6 @@
 .top .link,
 .sign-in-button {
 	text-decoration-line: none;
-	font-family: Arial, sans-serif;
 	font-size: 0.9rem;
 }
 
@@ -163,7 +163,7 @@
 	padding: 0 0.5em;
 	border: transparent;
 	outline: transparent;
-	font-size: 1rem;
+	font-size: 1em;
 }
 
 .search-by-voice-button {
@@ -202,7 +202,6 @@
 
 .github-link {
 	align-self: center;
-	font-family: "Arial", sans-serif;
 	font-size: 0.8em;
 	text-decoration-line: none;
 	color: hsl(240, 75%, 40%);
@@ -257,7 +256,6 @@
 }
 
 .bottom .link {
-	font-family: "Arial", sans-serif;
 	font-size: 0.9em;
 	text-decoration-line: none;
 	color: hsl(0, 0%, 40%);

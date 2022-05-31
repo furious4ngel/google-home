@@ -1,5 +1,9 @@
 * {
 	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .html {
@@ -11,7 +15,6 @@
 	display: grid;
 	grid-template-rows: max-content minmax(auto, 43.75rem) auto;
 	height: 100%;
-	margin: 0;
 }
 
 .material-symbols-outlined {

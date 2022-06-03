@@ -1,33 +1,34 @@
 <!DOCTYPE html>
-<html class="html">
+<html>
   <head>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined">
     <meta charset="UTF-8">
     <title>Google</title>
   </head>
-  <body class="body">
+  <body>
     <div class="top">
-      <div class="left-links">
-        <a class="link" href="#about">About</a>
-        <a class="link" href="#store">Store</a>
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#store">Store</a>
       </div>
-      <div class="right-links-and-buttons">
-        <div class="right-links">
-          <a class="link" href="#gmail">Gmail</a>
-          <a class="link" href="#images">Images</a>
+      <div class="links-and-buttons">
+        <div class="links">
+          <a href="#gmail">Gmail</a>
+          <a href="#images">Images</a>
         </div>
         <div class="buttons">
           <button class="google-apps-button" type="button" aria-label="Google Apps" aria-expanded="false">
             <span class="material-symbols-outlined">apps</span>
           </button>
-          <a class="sign-in-button" href="#accounts">Sign in</a>
+          <span></span>
+          <a class="sign-in-button" href="#sign-in">Sign in</a>
           <div class="google-apps-list">
             <div>
               <ul>
                 <li>
                   <a href="#accounts">
-                    <img src="img/account-icon.svg" alt="" height="38" width="40">
+                    <img src="img/account-icon.svg" alt="" height="40" width="40">
                     Account
                   </a>
                 </li>
@@ -128,7 +129,7 @@
               <ul>
                 <li>
                   <a href="#finance">
-                    <img src="img/finance-logo.svg" alt="" height="40" width="40">
+                    <img class="finance-icon" src="img/finance-logo.svg" alt="" height="40" width="40">
                     Finance
                   </a>
                 </li>
@@ -193,7 +194,7 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#arts-and-culture">
+                  <a class="arts-link" href="#arts-and-culture">
                     <img src="img/arts-and-culture-icon.png" alt="" height="40" width="40">
                     <span>Arts and Culture</span>
                   </a>
@@ -231,42 +232,43 @@
               </ul>
             </div>
             <div>
-              <a href="#more-from-google">More from Google</a>
+              <a class="more-from-google-button" href="#more-from-google">More from Google</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="google-search-controls">
-      <img class="google-logo" src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" width="272" height="92">
-      <div id="search-bar-container">
-        <form class="google-search" id="search" action="#" method="get">
-          <label for="search-bar" class="material-symbols-outlined mag-glass">search</label>
-          <input class="search-bar" type="text" id="search-bar" name="search" title="Search">
-          <button class="search-by-voice-button" type="button" aria-label="Search by voice">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Google_mic.svg" alt="Search" width="14" height="20">
+    <div class="google-search">
+      <img class="logo" src="img/google-logo.svg" alt="Google" width="272" height="92">
+      <div class="search-bar">
+        <form id="search" action="#" method="get" autocomplete="off">
+          <label for="search-bar" class="material-symbols-outlined">search</label>
+          <input type="text" id="search-bar" name="search" title="Search">
+          <button type="button" aria-label="Search by voice">
+            <img src="img/mic-icon.svg" alt="Search" width="14" height="20">
           </button>
+          <span></span>
         </form>
       </div>
       <div class="search-buttons">
-        <button class="search-button" type="submit" form="search">Google Search</button>
-        <button class="search-button" type="submit" form="search">I'm Feeling Lucky</button>
+        <button type="submit" form="search">Google Search</button>
+        <button type="submit" form="search">I'm Feeling Lucky</button>
       </div>
       <a class="github-link" href="#">Created by t4rantino</a>
     </div>
     <div class="bottom">
-      <div class="left-links">
-        <a class="link" href="#advertising">Advertising</a>
-        <a class="link" href="#business">Business</a>
-        <a class="link" href="#how-search-works">How Search works</a>
+      <div class="links">
+        <a href="#advertising">Advertising</a>
+        <a href="#business">Business</a>
+        <a href="#how-search-works">How Search works</a>
       </div>
       <div class="middle-link">
-        <a class="link" href="#carbon-neutral">Carbon neutral since 2007</a>
+        <a href="#carbon-neutral">Carbon neutral since 2007</a>
       </div>
-      <div class="right-links">
-        <a class="link" href="#privacy">Privacy</a>
-        <a class="link" href="#terms">Terms</a>
-        <a class="link" href="#settings">Settings</a>
+      <div class="links">
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+        <a href="#settings">Settings</a>
       </div>
     </div>
   </body>

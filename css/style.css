@@ -6,14 +6,14 @@
   appearance: none;
 }
 
-.html {
+html {
 	height: 100%;
 	min-width: 27rem;
 }
 
-.body {
+body {
 	display: grid;
-	grid-template-rows: max-content minmax(auto, 43.75rem) auto;
+	grid-template-rows: max-content minmax(auto, 42.75rem) auto;
 	height: 100%;
   font: 1rem / 1.4 "Arial", sans-serif;
 }
@@ -28,9 +28,8 @@
 
 /* Top Links & Buttons */
 .top,
-.top .left-links,
-.top .right-links-and-buttons,
-.top .right-links,
+.top .links,
+.links-and-buttons,
 .buttons {
 	display: flex;
 	align-items: center;
@@ -39,36 +38,46 @@
 .top {
 	gap: 4.25rem;
 	justify-content: space-between;
-	padding: 0.75em 1.5em 0;
+	padding: 0.6em 1.1em 0 1.4em;
 }
 
-.top .left-links,
-.top .right-links-and-buttons,
-.top .right-links {
+.top > .links {
+  gap: 0.7em;
+  font-size: 0.9em;
+}
+
+.top > .links a {
+  padding: 0.25em;
+}
+
+.links-and-buttons {
+  gap: 1.25rem;
+}
+
+.links-and-buttons .links {
 	gap: 1rem;
+  font-size: 0.8em;
 }
 
 .buttons {
   position: relative;
-	gap: 0.75rem;
+	gap: 0.4rem;
 }
 
-.top .link,
-.sign-in-button {
+.top a {
 	text-decoration-line: none;
-	font-size: 0.9rem;
 }
 
-/* Top Links */
-.top .link:not(
-	.google-apps-button .link,
-	.sign-in-button .link) {
+.top a:not(
+	.sign-in-button,
+  .more-from-google-button) {
 	color: hsl(0, 0%, 0%);
 }
 
-.top .link:not(
-	.google-apps-button .link,
-	.sign-in-button .link):hover {
+.top a:hover:not(
+  .google-apps-list a,
+	.sign-in-button,
+  .more-from-google-button) {
 	text-decoration-line: underline;
 }
 
@@ -77,21 +86,53 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 40px;
-	width: 40px;
+	height: 2.5rem
+	width: 2.5rem;
 	text-decoration-line: none;
 	background: transparent;
 	border: transparent;
 	border-radius: 50%;
-	color: hsl(0, 0%, 30%);
+	color: hsl(0, 0%, 40%);
 	cursor: pointer;
 }
 
+.google-apps-button:focus,
 .google-apps-button:hover {
 	background-color: hsla(0, 0%, 85%, 0.4);
 }
 
+.google-apps-button:focus {
+  outline: none;
+}
+
+.google-apps-button:active {
+  background-color: hsla(0, 0%, 85%, 0.8);
+}
+
+.google-apps-button + span {
+  position: relative;
+}
+
+.google-apps-button + span::before {
+  position: absolute;
+  top: 24px;
+  left: -73px;
+  padding: 0.2em 0.5em;
+  width: max-content;
+  font-size: 0.85em;
+  background-color: hsl(0, 0%, 25%);
+  border-radius: 4px;
+  color: #fff;
+  z-index: 2;
+}
+
+.google-apps-button:hover + span::before {
+  content: "Google apps";
+}
+
+/* Google Apps List */
 .google-apps-list {
+  display: none;
   position: absolute;
   top: 55px;
   left: -172px;
@@ -109,13 +150,9 @@
 .google-apps-list ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(6, 82px);
+  grid-template-rows: repeat(6, 5.125rem);
   gap: 1rem;
   list-style-type: none;
-}
-
-.google-apps-list a {
-  font-size: 0.9em;
 }
 
 .google-apps-list ul a {
@@ -125,22 +162,9 @@
   justify-content: space-around;
   padding: 0.5em 0;
   gap: 0.6em;
+  font-size: 0.9em;
   text-align: center;
-  text-decoration: none;
   border-radius: 7px;
-  color: #000;
-}
-
-a[href="#arts-and-culture"] > span {
-  width: 83px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-a[href="#arts-and-culture"]:focus > span,
-a[href="#arts-and-culture"]:hover > span {
-  white-space: normal;
 }
 
 .google-apps-list ul a:focus,
@@ -148,8 +172,28 @@ a[href="#arts-and-culture"]:hover > span {
   background-color: hsl(214, 100%, 96%);
 }
 
+.google-apps-list ul a:focus {
+  outline: none;
+}
+
 .google-apps-list ul a:active {
   background-color: hsl(214, 100%, 94%);
+}
+
+.finance-icon {
+  border-radius: 4px;
+}
+
+.arts-link > span {
+  width: 5.125rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.arts-link:focus > span,
+.arts-link:hover > span {
+  white-space: normal;
 }
 
 .horizontal-line {
@@ -161,24 +205,24 @@ a[href="#arts-and-culture"]:hover > span {
   background-color: hsl(0, 0%, 90%);
 }
 
-a[href="#more-from-google"] {
+.more-from-google-button {
   display: block;
   margin: 1.75rem auto 0;
   padding: 0.5em 1.5em;
   width: max-content;
-  text-decoration-line: none;
+  font-size: 0.86em;
   border: 1px solid hsl(0, 0%, 90%);
   border-radius: 5px;
   color: hsl(214, 80%, 50%);
 }
 
-a[href="#more-from-google"]:focus,
-a[href="#more-from-google"]:hover {
+.more-from-google-button:focus,
+.more-from-google-button:hover {
   background-color: hsl(214, 80%, 98%);
   border-color: hsl(214, 80%, 90%);
 }
 
-a[href="#more-from-google"]:active {
+.more-from-google-button:active {
   background-color: hsl(214, 100%, 94%);
   border-color: transparent;
   box-shadow: 0 1px 4px 1px hsl(0, 0%, 80%);
@@ -191,10 +235,17 @@ a[href="#more-from-google"]:active {
 	justify-content: center;
 	height: 2.25rem;
 	width: 6rem;
+  font-size: 0.9em;
 	background-color: hsl(214, 80%, 50%);
 	border: transparent;
 	border-radius: 4px;
 	color: hsl(0, 0%, 100%);
+}
+
+.sign-in-button:focus {
+  outline: none;
+	box-shadow: 0 1px 3px hsl(214, 100%, 80%);
+	background-color: hsl(214, 80%, 65%);
 }
 
 .sign-in-button:hover {
@@ -202,46 +253,62 @@ a[href="#more-from-google"]:active {
 	background-color: hsl(214, 80%, 55%);
 }
 
+.sign-in-button:active {
+  background-color: hsl(214, 80%, 65%);
+}
+
 /* Google Search */
-.google-search-controls {
+.google-search {
 	display: flex;
 	flex-direction: column;
 	gap: 1.5rem;
 	align-self: center;
-	padding: 1.25em 1rem;
+	padding: 1.25em 1em;
 }
 
-.google-logo {
+.google-search .logo {
 	align-self: center;
 }
 
 /* Search Bar */
-.google-search {
+.search-bar form {
 	display: flex;
 	height: 2.75rem;
 	margin: 0 auto;
 	max-width: 36rem;
 	padding: 0 0.65em;
-	border: 1px solid hsl(0, 0%, 86%);
-	border-radius: 2rem;
+	border: 1px solid hsl(0, 0%, 87%);
+	border-radius: 32px;
 }
 
-.mag-glass {
+.search-bar form:focus-within,
+.search-bar form:hover {
+	border-color: transparent;
+	box-shadow:
+	    0px 3px 5px 0 hsl(0, 0%, 88%),
+	    0px -1px 5px 0 hsl(0, 0%, 88%);
+}
+
+.search-bar label {
 	align-self: center;
 	color: hsl(0, 0%, 45%);
 	cursor: default;
 	transform: scale(0.8);
 }
 
-.search-bar {
+.search-bar input {
 	flex: 1;
 	padding: 0 0.5em;
+  background-color: #fff;
 	border: transparent;
-	outline: transparent;
 	font-size: 1em;
 }
 
-.search-by-voice-button {
+.search-bar input:focus {
+  outline: none;
+}
+
+.search-bar button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -251,11 +318,34 @@ a[href="#more-from-google"]:active {
 	cursor: pointer;
 }
 
-.google-search:hover {
-	border-color: transparent;
-	box-shadow:
-	    0px 3px 5px 0 hsl(0, 0%, 88%),
-	    0px -1px 5px 0 hsl(0, 0%, 88%);
+.search-bar button:focus {
+  outline: none;
+}
+
+.search-bar button + span {
+  position: relative;
+}
+
+.search-bar button + span::before {
+  content: "Search by voice";
+  position: absolute;
+  top: 50px;
+  left: -95px;
+  padding: 0.6em 1em;
+  width: max-content;
+  font-size: 0.65em;
+  font-weight: 900;
+  background-color: hsl(0, 0%, 20%);
+  border: 1px solid #fff;
+  box-shadow: 0 1px 10px -4px #000;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0ms 175ms;
+}
+
+.search-bar button:focus + span::before,
+.search-bar button:hover + span::before {
+  opacity: 1;
 }
 
 /* Search Buttons */
@@ -263,11 +353,12 @@ a[href="#more-from-google"]:active {
 	display: flex;
 	gap: 0.7rem;
 	justify-content: center;
+  margin-top: 8px;
 }
 
-.search-button {
+.search-buttons button {
 	padding: 0.65em 1em;
-	font-size: 0.9rem;
+	font-size: 0.9em;
 	background-color: hsla(0, 0%, 90%, 0.3);
 	border: 1px solid transparent;
 	border-radius: 4px;
@@ -275,17 +366,26 @@ a[href="#more-from-google"]:active {
 	cursor: pointer;
 }
 
+.search-buttons button:focus {
+  outline: none;
+}
+
+.search-buttons button:hover {
+	border: 1px solid hsl(0, 0%, 90%);
+	box-shadow: 0 1px 2px 0 hsl(0, 0%, 90%);
+	color: hsl(0, 0%, 10%);
+}
+
+.search-buttons button:focus,
+.search-buttons button:active {
+  border-color: hsl(214, 80%, 55%);
+}
+
 .github-link {
 	align-self: center;
 	font-size: 0.8em;
 	text-decoration-line: none;
 	color: hsl(240, 75%, 40%);
-}
-
-.search-button:hover {
-	border: 1px solid hsl(0, 0%, 90%);
-	box-shadow: 0 1px 2px 0 hsl(0, 0%, 90%);
-	color: hsl(0, 0%, 10%);
 }
 
 .github-link:hover {
@@ -298,19 +398,25 @@ a[href="#more-from-google"]:active {
 	align-items: center;
 	align-self: end;
 	flex-wrap: wrap;
-	column-gap: 3rem;
 	justify-content: space-around;
-	height: max-content;
-	padding: 0 1.25rem;
+	padding: 0 2em;
 	background-color: hsl(0, 0%, 95%);
 }
 
-.bottom .left-links,
-.bottom .middle-link,
-.bottom .right-links {
+.bottom .links,
+.middle-link {
 	display: flex;
-	gap: 1.75rem;
-	padding: 0.8rem 0;
+}
+
+.bottom a {
+  padding: 0.8em;
+	font-size: 0.86em;
+	text-decoration-line: none;
+	color: hsl(0, 0%, 40%);
+}
+
+.bottom a:hover {
+	text-decoration-line: underline;
 }
 
 .bottom .middle-link {
@@ -319,37 +425,32 @@ a[href="#more-from-google"]:active {
 	width: 100%;
 }
 
-.middle-link .link {
+.middle-link a {
 	display: flex;
 	align-items: center;
 	gap: 0.1rem;
 }
 
-.middle-link .link::before {
+.middle-link a::before {
 	content: url("../img/google-leaf.png");
 	transform: scale(0.6);
 }
 
-.bottom .link {
-	font-size: 0.9em;
-	text-decoration-line: none;
-	color: hsl(0, 0%, 40%);
-}
-
-.bottom .link:hover {
-	text-decoration-line: underline;
-}
-
 /* Queries */
+@media (min-width: 40rem) {
+  .search-bar button + span::before {
+    left: -69px;
+  }
+}
+
 @media (min-width: 75rem) {
 	.bottom {
 		justify-content: space-between;
-		padding: 0 2rem;
 	}
 
 	.bottom .middle-link {
 		justify-content: stretch;
 		order: 0;
-		width: 18rem;
+		width: 19rem;
 	}
 }
